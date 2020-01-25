@@ -56,6 +56,20 @@ export const Button = styled.button`
   transition: background 0.2s;
 `;
 
+export const Backdrop = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-top: 5rem;
+  z-index: 1000;
+`;
+
 export default createGlobalStyle`
  @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
 
