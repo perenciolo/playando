@@ -18,7 +18,8 @@ export const Card = styled.div`
 `;
 
 export const CardPlayer = styled.div`
-  background: magenta;
+  background: ${props =>
+    props.bgUrl ? `url(${props.bgUrl}) center center no-repeat` : 'magenta'};
   height: 0;
   padding-top: 56.25%;
   position: relative;

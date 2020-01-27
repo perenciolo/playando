@@ -9,6 +9,10 @@ export const primaryColor = '#EA7235';
 export const secondayColor = '#E5E5E5';
 export const whiteColor = '#FFF';
 export const textColor = '#545454';
+export const dangerColor = '#bb2124';
+export const warningColor = '#f0ad4e';
+export const successColor = '#22bb33';
+export const defaultColor = '#aaaaaa';
 
 export const Container = styled.div`
   display: flex;

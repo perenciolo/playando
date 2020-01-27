@@ -6,7 +6,7 @@ export default reducers => {
     {
       key: 'playando',
       storage,
-      whitelist: []
+      whitelist: ['playlist']
     },
     reducers
   );

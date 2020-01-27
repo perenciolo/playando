@@ -2,9 +2,12 @@ import { call, put, all, takeLatest } from 'redux-saga/effects';
 
 import api, { params } from '../../../services/api';
 import * as types from './types';
-import { getVideosSuccess, getVideosFailure } from './actions';
 
-function* findVideos({ term }) {
+import { getVideosSuccess, getVideosFailure } from './actions';
+import { hideLoading, showModal } from '../behaviors/actions';
+import { pushVideo } from '../playlist/actions';
+
+function* findVideos({ term, directlyUrl }) {
   try {
     const response = yield call(api.get, '/search', {
       params: {
@@ -18,9 +21,19 @@ function* findVideos({ term }) {
       throw new Error('Not found');
     }
 
-    yield put(getVideosSuccess(response.data.items));
+    if (directlyUrl) {
+      if (response.data.items) {
+        yield put(pushVideo(response.data.items[0]));
+      }
+    } else {
+      yield put(getVideosSuccess(response.data.items));
+      yield put(showModal());
+    }
+
+    yield put(hideLoading());
   } catch (error) {
     yield put(getVideosFailure(error));
+    yield put(hideLoading());
   }
 }
 

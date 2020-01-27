@@ -1,8 +1,9 @@
 import * as types from './types';
 
-export const getVideosRequest = term => ({
+export const getVideosRequest = (term, directlyUrl = false) => ({
   type: types.GET_VIDEOS_REQUEST,
-  term
+  term,
+  directlyUrl
 });
 
 export const getVideosSuccess = videos => ({
