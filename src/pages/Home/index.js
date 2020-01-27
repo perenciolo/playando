@@ -19,7 +19,10 @@ import MsgBox from '../../components/MsgBox';
 
 import { getVideosRequest } from '../../store/modules/videoList/actions';
 import { URL_REGEX } from '../../services/constants';
-import { pushVideo } from '../../store/modules/playlist/actions';
+import {
+  pushVideo,
+  emptyDisclaimer
+} from '../../store/modules/playlist/actions';
 import { showLoading, hideModal } from '../../store/modules/behaviors/actions';
 
 export default function Home() {
@@ -80,6 +83,7 @@ export default function Home() {
     dispatch(pushVideo(video));
     dispatch(hideModal());
     setVidTxt('');
+    window.location.reload();
   }
 
   function handleFilter() {
@@ -109,6 +113,7 @@ export default function Home() {
     });
 
     setLocalPlaylist(filteredPlaylist);
+    dispatch(emptyDisclaimer());
   }
 
   return (

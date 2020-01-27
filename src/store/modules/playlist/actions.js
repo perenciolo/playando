@@ -9,3 +9,7 @@ export const removeVideo = videoId => ({
   type: types.REMOVE_VIDEO,
   videoId
 });
+
+export const emptyDisclaimer = () => ({
+  type: types.EMPTY_DISCLAIMER
+});

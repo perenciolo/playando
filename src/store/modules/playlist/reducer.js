@@ -13,7 +13,7 @@ export default function playlist(state = INITIAL_STATE, action) {
     switch (action.type) {
       case types.PUSH_VIDEO: {
         if (
-          !!state.playlist.find(
+          !!draft.playlist.find(
             video => video.id.videoId === action.video.id.videoId
           )
         ) {
@@ -26,9 +26,14 @@ export default function playlist(state = INITIAL_STATE, action) {
         break;
       }
 
+      case types.EMPTY_DISCLAIMER: {
+        draft.disclaimer = '';
+        break;
+      }
+
       case types.REMOVE_VIDEO: {
         draft.disclaimer = '';
-        draft.playlist = state.playlist.filter(
+        draft.playlist = draft.playlist.filter(
           video => video.id.videoId !== action.videoId
         );
         break;

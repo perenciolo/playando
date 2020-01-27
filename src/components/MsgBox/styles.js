@@ -3,6 +3,7 @@ import { defaultColor, textColor } from '../../styles/global';
 import { lighten, darken } from 'polished';
 
 export const Box = styled.div`
+  flex: 1;
   margin: 2rem;
   padding: 2rem;
   background: ${props =>

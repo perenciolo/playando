@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Button, textColor, primaryColor } from '../../styles/global';
+import Youtube from 'react-youtube';
 
 export const Card = styled.div`
   display: flex;
@@ -12,24 +13,46 @@ export const Card = styled.div`
     max-width: ${100 / 2}%;
   }
 
-  @media (min-width: 960px) {
-    max-width: ${100 / 3}%;
+  > .yt-playr {
+    display: flex;
+    position: relative;
+    height: 0;
+    padding-top: 56.25%;
   }
 `;
 
-export const CardPlayer = styled.div`
+export const PlayerWrapper = styled.div`
+  position: relative;
+`;
+
+export const CardPlayer = styled(Youtube)`
+  flex: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+`;
+
+export const CardCover = styled.div`
   background: ${props =>
-    props.bgUrl ? `url(${props.bgUrl}) center center no-repeat` : 'magenta'};
+    props.bgUrl
+      ? `black url(${props.bgUrl}) center center no-repeat`
+      : 'black'};
+  position: relative;
+  flex: 1;
   height: 0;
   padding-top: 56.25%;
-  position: relative;
-  z-index: 10;
+  z-index: ${props => (props.cover ? 40 : 20)};
 `;
 
 export const CardActions = styled.div`
   height: 3rem;
   position: relative;
-  z-index: 20;
+  z-index: 100;
   transform: translateY(-50%);
   top: 0;
   left: 0;
