@@ -19,7 +19,7 @@ export default function Player({ playlist }) {
   const dispatch = useDispatch();
 
   return playlist.map((video, i) => (
-    <Card key={String(video.id.videoId + i)}>
+    <Card key={String(video.id.videoId)}>
       <CardPlayer bgUrl={video.snippet.thumbnails.high.url}></CardPlayer>
       <CardActions>
         <CardBtn gradient bg={primaryColor}>
@@ -34,6 +34,7 @@ export default function Player({ playlist }) {
           <MdClose size={30} color={textColor} />
         </CardBtn>
       </CardActions>
+      <div>{`${++i}. ${video.snippet.title}`}</div>
     </Card>
   ));
 }
