@@ -5,13 +5,14 @@ import { MdPlayArrow, MdPause, MdClose } from 'react-icons/md';
 
 import { removeVideo } from '../../store/modules/playlist/actions';
 
-import { Card, CardPlayer, CardActions, CardBtn } from './styles';
+import { Card, CardPlayer, CardActions, CardBtn, CardTitle } from './styles';
 import {
   whiteColor,
   primaryColor,
   secondayColor,
   textColor
 } from '../../styles/global';
+import VideoPlayer from './VideoPlayer';
 
 export default function Player({ playlist }) {
   const play = false;
@@ -20,7 +21,10 @@ export default function Player({ playlist }) {
 
   return playlist.map((video, i) => (
     <Card key={String(video.id.videoId)}>
-      <CardPlayer bgUrl={video.snippet.thumbnails.high.url}></CardPlayer>
+      {!play && <VideoPlayer videoId={video.id.videoId}></VideoPlayer>}
+      {play && (
+        <CardPlayer bgUrl={video.snippet.thumbnails.high.url}></CardPlayer>
+      )}
       <CardActions>
         <CardBtn gradient bg={primaryColor}>
           {!play && <MdPlayArrow size={30} color={whiteColor} />}
@@ -34,7 +38,10 @@ export default function Player({ playlist }) {
           <MdClose size={30} color={textColor} />
         </CardBtn>
       </CardActions>
-      <div>{`${++i}. ${video.snippet.title}`}</div>
+      <CardTitle>
+        <div className="num">{`${++i}.`}</div>
+        <div className="txt">{video.snippet.title}</div>
+      </CardTitle>
     </Card>
   ));
 }

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Button } from '../../styles/global';
+import { Button, textColor, primaryColor } from '../../styles/global';
 
 export const Card = styled.div`
   display: flex;
@@ -44,4 +44,20 @@ export const CardBtn = styled(Button)`
   border-radius: 50%;
   width: 5rem;
   height: 5rem;
+`;
+
+export const CardTitle = styled.div`
+  color: ${textColor};
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  display: flex;
+
+  > .num {
+    color: ${primaryColor};
+    font-weight: 900;
+  }
+
+  > .txt {
+    margin-left: 1rem;
+  }
 `;
