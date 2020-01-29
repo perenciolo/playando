@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/playando/static/js/main.a08e0235.chunk.js",
+    "main.js.map": "/playando/static/js/main.a08e0235.chunk.js.map",
+    "runtime-main.js": "/playando/static/js/runtime-main.36fe52ee.js",
+    "runtime-main.js.map": "/playando/static/js/runtime-main.36fe52ee.js.map",
+    "static/js/2.a1443601.chunk.js": "/playando/static/js/2.a1443601.chunk.js",
+    "static/js/2.a1443601.chunk.js.map": "/playando/static/js/2.a1443601.chunk.js.map",
+    "index.html": "/playando/index.html",
+    "precache-manifest.b7ba9075f939483d2316f9b4388e232d.js": "/playando/precache-manifest.b7ba9075f939483d2316f9b4388e232d.js",
+    "service-worker.js": "/playando/service-worker.js",
+    "static/js/2.a1443601.chunk.js.LICENSE": "/playando/static/js/2.a1443601.chunk.js.LICENSE"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.36fe52ee.js",
+    "static/js/2.a1443601.chunk.js",
+    "static/js/main.a08e0235.chunk.js"
+  ]
+}
