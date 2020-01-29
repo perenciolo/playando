@@ -1,5 +1,7 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
 import { darken } from 'polished';
+
+import './styles.scss';
 
 export const defaultSpacer = 2;
 export const radius = '2rem';
@@ -72,105 +74,4 @@ export const Backdrop = styled.div`
   bottom: 0;
   padding-top: 5rem;
   z-index: 1000;
-`;
-
-export default createGlobalStyle`
- @import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
-
- @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-
-  * {
-    margin:0;
-    padding: 0;
-    outline: 0;
-    box-sizing: border-box;
-  }
-
-  *:focus {
-    outline: 0;
-  }
-
-  html {
-    font-size: 10px;
-  }
-
-  html, body, #root {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-  }
-
-  body {
-    -webkit-font-smoothing: antialiased;
-  }
-
-  body, input, button, textarea {
-    font: 1.4rem 'Roboto', sans-serif;
-  }
-
-  a {
-    text-decoration: none;
-  }
-
-  ul {
-    list-style: none;
-  }
-
-  button {
-    cursor: pointer;
-  }
-
-  form {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    padding: 2rem;
-    padding-top: 0;
-
-    input {
-      background: rgba(0, 0, 0, 0.1);
-      border: 0;
-      border-radius: ${radius};
-      height: 4.4rem;
-      padding: 0 1.5rem 0 ${defaultSpacer}rem;
-      color: ${textColor};
-      margin: 0 0 ${defaultSpacer / 2}rem;
-
-      &::placeholder {
-        color: rgba(0, 0, 0, 0.7);
-      }
-    }
-
-    textarea {
-      background: rgba(0, 0, 0, 0.1);
-      border: 0;
-      border-radius: ${radius};
-      height: 200px;
-      padding: 0 15px;
-      margin: 0 0 ${defaultSpacer / 2}rem;
-
-      color: #fff;
-      &::placeholder {
-        color: rgba(255, 255, 255, 0.7);
-      }
-    }
-
-    span {
-      color: #fb6f91;
-      align-self: flex-start;
-      margin: 0 0 10px;
-      font-weight: bold;
-    }
-
-    a {
-      color: #fff;
-      margin-top: 15px;
-      font-size: 16px;
-      opacity: 0.8;
-
-      &:hover {
-        opacity: 1;
-      }
-    }
-  }
 `;
